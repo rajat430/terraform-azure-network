@@ -27,7 +27,20 @@ variable "subnet_details" {
     nsg_name = string
     nsg_rules = list(object({
         name = string
-        properties = map(any)
+        properties =object({
+          protocol = string
+          sourcePortRange= string
+          destinationPortRange = string
+          sourceAddressPrefix =string
+          destinationAddressPrefix=string
+          access=string
+          priority=number
+          direction=string
+          sourcePortRanges=list(string)
+          destinationPortRanges=list(string)
+          sourceAddressPrefixes=list(string)
+          destinationAddressPrefixes=list(string)
+        })
     }))
   }))
 }
