@@ -25,7 +25,7 @@ variable "subnet_details" {
     name = string
     address_prefixes = list(string)
     nsg_name = string
-    nsg_rules = set(object({
+    nsg_rules = map(object({
         name = string
         properties =object({
           protocol = string
