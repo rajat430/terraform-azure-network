@@ -13,7 +13,7 @@ resource "azurerm_network_security_group" "example" {
   location            = data.azurerm_resource_group.vnet_rg.location
   resource_group_name = data.azurerm_resource_group.vnet_rg.name
 
-  security_rule = var.subnet_details.value.nsg_rules
+  security_rule = var.subnet_details.nsg_rules
 
 }
 
