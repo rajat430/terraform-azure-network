@@ -12,6 +12,9 @@ resource "azurerm_network_security_group" "example" {
   name                = each.value.nsg_name
   location            = data.azurerm_resource_group.vnet_rg.location
   resource_group_name = data.azurerm_resource_group.vnet_rg.name
+
+  security_rule = var.subnet_details.value.nsg_rules
+
 }
 
 resource "azurerm_virtual_network" "example" {
