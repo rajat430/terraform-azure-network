@@ -25,8 +25,9 @@ variable "subnet_details" {
     name = string
     address_prefixes = list(string)
     nsg_name = string
-    nsg_rules = map(object({
+    nsg_rules = list(object({
         name = string
+        properties = map(any)
     }))
   }))
 }
